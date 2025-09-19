@@ -1,3 +1,5 @@
+import { DeckType } from '@/types/types';
+
 const createDeck = () => {
   const suits = ['spades', 'hearts', 'clubs', 'diamonds'];
   const values = [
@@ -27,4 +29,15 @@ const createDeck = () => {
   return deck;
 };
 
-export default createDeck;
+const shuffleDeck = () => {
+  const deck = [...createDeck(), ...createDeck()];
+
+  for (let i = deck.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+  return deck;
+};
+
+export { createDeck, shuffleDeck };

@@ -1,7 +1,7 @@
-import createDeck from './utils/deck';
+import { shuffleDeck } from './utils/deck';
 
 const GameLogic = () => {
-  console.log(createDeck());
+  console.log(shuffleDeck());
 };
 
 export default GameLogic;
